@@ -26,7 +26,7 @@ jobs:
         run: python train.py
       - name: Evaluation
         env:
-          REPO_TOKEN: ${{ secrets.G_TOKEN }}
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}    # <--- Use the default GITHUB_TOKEN here
         run: | 
           echo "## Model Metrics" > report.md
           cat metrics.txt >> report.md
